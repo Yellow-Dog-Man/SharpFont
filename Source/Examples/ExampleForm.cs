@@ -57,7 +57,7 @@ namespace Examples
 			// Some variations of the character set shown by the Windows Font Viewer
 			//sampleText = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890.:,;'\"(!?)+-*//=";
 			//sampleText = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890";
-			sampleText = "abcdefghijklmnopqrstuvwxyz";
+			sampleText = "abcdefghijklmnopqrstuvwxyz 日本語";
 			fontService.Size = 62f;
 			fontSize = 62f;
 			mainMenuFontSize.Text = fontService.Size.ToString("0.0");
