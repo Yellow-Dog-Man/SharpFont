@@ -1,3 +1,4 @@
+<!-- We don't use this in our fork, to be honest we just hacked together our fork to work with CI-->
 <?xml version="1.0"?>
 <package>
   <metadata>
