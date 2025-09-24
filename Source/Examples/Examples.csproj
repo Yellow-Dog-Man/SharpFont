@@ -23,30 +23,10 @@
       <Link>x86\freetype6.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Fonts\Alegreya - SIL Open Font License.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Fonts\AlexBrush - SIL Open Font License.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Fonts\Cousine - SIL Open Font License 1.1.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Fonts\Alegreya-Regular.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\AlexBrush-Regular.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\Cousine-Regular-Latin.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\ExampleFonts\ExampleFonts.csproj" />
     <ProjectReference Include="..\SharpFont.GDI\SharpFont.Gdi.csproj" />
     <ProjectReference Include="..\SharpFont\SharpFont.csproj" />
   </ItemGroup>
