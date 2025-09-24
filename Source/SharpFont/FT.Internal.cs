@@ -85,6 +85,26 @@ namespace SharpFont
 		/// TODO: Use the same name for all platforms.
 	    private const string FreetypeDll = "freetype6";
 
+		static FT()
+		{
+			NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), LoadFreetype);
+		}
+
+		private static IntPtr LoadFreetype(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
+		{
+			if (libraryName != "freetype6") return IntPtr.Zero;
+			bool success = NativeLibrary.TryLoad("freetype6", out IntPtr handle);
+			if (success) return handle;
+
+			success = NativeLibrary.TryLoad("libfreetype.so.6", out handle);
+			if (success) return handle;
+
+			success = NativeLibrary.TryLoad("libfreetype.6.dylib", out handle);
+			if (success) return handle;
+
+			return IntPtr.Zero;
+		}
+
 		/// <summary>
 		/// Defines the calling convention for P/Invoking the native freetype methods.
 		/// </summary>
@@ -108,7 +128,7 @@ namespace SharpFont
 		#endregion
 
 		#region Base Interface
-		
+
 		[DllImport(FreetypeDll, CallingConvention = CallConvention)]
 		internal static extern Error FT_Init_FreeType(out IntPtr alibrary);
 

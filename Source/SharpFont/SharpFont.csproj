@@ -1,18 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ECD55E3B-1139-4F0D-AF63-3F471AAF6E91}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharpFont</RootNamespace>
-    <AssemblyName>SharpFont</AssemblyName>
-    <FileAlignment>512</FileAlignment>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\SharpFont.snk</AssemblyOriginatorKeyFile>
-    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <TargetFramework>net9.0</TargetFramework>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+	
   <!-- NUGET META DATA -->
   <PropertyGroup>
     <Company>Robert Rouhani</Company>
@@ -25,60 +17,4 @@
     <PackageProjectURL>https://github.com/Yellow-Dog-Man/SharpFont</PackageProjectURL>
     <PackageTags>freetype font bindings wrapper text rendering</PackageTags>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' != 'ReleaseNET20' ">
-    <TargetFrameworks>net45</TargetFrameworks>
-    <TargetFrameworkIdentifier>.NETPortable</TargetFrameworkIdentifier>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\..\Binaries\SharpFont\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\SharpFont.xml</DocumentationFile>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-  	<TargetFrameworks>net45</TargetFrameworks>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\..\Binaries\SharpFont\Release\</OutputPath>
-    <DefineConstants>TRACE;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\SharpFont.xml</DocumentationFile>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET20|AnyCPU'">
-    <OutputPath>..\..\Binaries\SharpFont\ReleaseNET20\</OutputPath>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
-  </PropertyGroup>
-  <ItemGroup Condition=" '$(Configuration)' == 'ReleaseNET20' ">
-    <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\SharpFont.dll.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\SharpFont.snk" />
-  </ItemGroup>
-  <Target Name="Pack"></Target>
-  <!--<Import Condition=" '$(Configuration)' != 'ReleaseNET20' " Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Condition=" '$(Configuration)' == 'ReleaseNET20' " Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />-->
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
