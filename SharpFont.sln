@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples", "Examples\Examples.csproj", "{81158C54-C830-4056-B5D6-AE9059741B20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples", "Source\Examples\Examples.csproj", "{81158C54-C830-4056-B5D6-AE9059741B20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpFont", "SharpFont\SharpFont.csproj", "{ECD55E3B-1139-4F0D-AF63-3F471AAF6E91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpFont", "Source\SharpFont\SharpFont.csproj", "{ECD55E3B-1139-4F0D-AF63-3F471AAF6E91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpFont.Gdi", "SharpFont.GDI\SharpFont.Gdi.csproj", "{544493F1-3A5C-4576-975B-06B63CE0175F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpFont.Gdi", "Source\SharpFont.GDI\SharpFont.Gdi.csproj", "{544493F1-3A5C-4576-975B-06B63CE0175F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpFont.HarfBuzz", "SharpFont.HarfBuzz\SharpFont.HarfBuzz.csproj", "{31457A69-1EF3-4CDC-8741-6DE3DDB82D3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpFont.HarfBuzz", "Source\SharpFont.HarfBuzz\SharpFont.HarfBuzz.csproj", "{31457A69-1EF3-4CDC-8741-6DE3DDB82D3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpFont.HarfBuzz.Example", "SharpFont.HarfBuzz.Example\SharpFont.HarfBuzz.Example.csproj", "{1D488727-E222-43A2-BBBD-095F17A488C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpFont.HarfBuzz.Example", "Source\SharpFont.HarfBuzz.Example\SharpFont.HarfBuzz.Example.csproj", "{1D488727-E222-43A2-BBBD-095F17A488C8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HarfBuzz", "HarfBuzz", "{11A19A77-0E52-4BC0-A098-5FD64908EAFA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HarfBuzz", "Source\HarfBuzz", "{11A19A77-0E52-4BC0-A098-5FD64908EAFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
