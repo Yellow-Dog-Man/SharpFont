@@ -25,4 +25,10 @@
       <ProjectReference Include="..\SharpFont\SharpFont.csproj" />
     </ItemGroup>
 
+	<ItemGroup>
+		<Content Include="..\..\Dependencies\freetype2\2.5.5\msvc10\x64\freetype6.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
 </Project>
