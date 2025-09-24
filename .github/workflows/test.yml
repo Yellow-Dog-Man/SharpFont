@@ -1,0 +1,33 @@
+name: Test Library
+
+on:
+  push:
+    paths-ignore:
+      - '**/*.md'
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**/*.md'
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: ./Source/SharpFont.Tests
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET 9
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 9.0.x
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Test
+        run: dotnet test
