@@ -22,7 +22,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ExampleFonts\ExampleFonts.csproj" />
-      <ProjectReference Include="..\Source\SharpFont\SharpFont.csproj" />
+      <ProjectReference Include="..\SharpFont\SharpFont.csproj" />
     </ItemGroup>
 
 </Project>
