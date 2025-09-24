@@ -1,19 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	<CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-	
+
   <ItemGroup>
     <Compile Update="Forms\LabeledToolStripComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
-	
+
   <ItemGroup>
     <Content Include="..\..\Dependencies\freetype2\2.5.5\msvc10\x64\freetype6.dll">
       <Link>x64\freetype6.dll</Link>
@@ -33,7 +33,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-	
+
   <ItemGroup>
     <None Update="Fonts\Alegreya-Regular.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -45,7 +45,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-	
+
   <ItemGroup>
     <ProjectReference Include="..\SharpFont.GDI\SharpFont.Gdi.csproj" />
     <ProjectReference Include="..\SharpFont\SharpFont.csproj" />
