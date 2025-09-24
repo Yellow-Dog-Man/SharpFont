@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpFont.HarfBuzz.Example"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HarfBuzz", "Source\HarfBuzz", "{11A19A77-0E52-4BC0-A098-5FD64908EAFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpFont.Tests", "SharpFont.Tests\SharpFont.Tests.csproj", "{F3EB1A5B-5C70-480C-A901-E39B8FF8E2B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{1D488727-E222-43A2-BBBD-095F17A488C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D488727-E222-43A2-BBBD-095F17A488C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D488727-E222-43A2-BBBD-095F17A488C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3EB1A5B-5C70-480C-A901-E39B8FF8E2B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3EB1A5B-5C70-480C-A901-E39B8FF8E2B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3EB1A5B-5C70-480C-A901-E39B8FF8E2B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3EB1A5B-5C70-480C-A901-E39B8FF8E2B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
