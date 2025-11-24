@@ -99,6 +99,9 @@ namespace SharpFont
 			success = NativeLibrary.TryLoad("libfreetype.so.6", out handle);
 			if (success) return handle;
 
+			success = NativeLibrary.TryLoad("libfreetype6-arm.so", out handle);
+			if (success) return handle;
+
 			success = NativeLibrary.TryLoad("libfreetype.6.dylib", out handle);
 			if (success) return handle;
 
