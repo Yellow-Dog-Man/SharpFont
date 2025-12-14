@@ -17,4 +17,11 @@
     <PackageProjectURL>https://github.com/Yellow-Dog-Man/SharpFont</PackageProjectURL>
     <PackageTags>freetype font bindings wrapper text rendering</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="runtimes\**">
+      <PackagePath>runtimes</PackagePath>
+      <Pack>true</Pack>
+    </None>    
+  </ItemGroup>
 </Project>
