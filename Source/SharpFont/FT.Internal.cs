@@ -23,6 +23,9 @@ SOFTWARE.*/
 #endregion
 
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 
 using SharpFont.Cache;
@@ -90,21 +93,46 @@ namespace SharpFont
 			NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), LoadFreetype);
 		}
 
+		private static IEnumerable<string> BinaryCandidates =>
+		[
+			FreetypeDll,
+			"libfreetype.so.6",
+			"libfreetype6.so",
+			"libfreetype.6.dylib"
+		];
+
 		private static IntPtr LoadFreetype(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
 		{
-			if (libraryName != "freetype6") return IntPtr.Zero;
-			bool success = NativeLibrary.TryLoad("freetype6", out IntPtr handle);
-			if (success) return handle;
+			if (libraryName != FreetypeDll) return IntPtr.Zero;
 
-			success = NativeLibrary.TryLoad("libfreetype.so.6", out handle);
-			if (success) return handle;
+			// First, try to load the libraries from the system normally:
+			foreach (string candidate in BinaryCandidates)
+			{
+				bool success = NativeLibrary.TryLoad(candidate, out IntPtr handle);
+				if (success) return handle;
+			}
 
-			success = NativeLibrary.TryLoad("libfreetype6.so", out handle);
-			if (success) return handle;
+			// If that ends up failing let's try and find the library using a routine similar to .NET's normal resolver.
 
-			success = NativeLibrary.TryLoad("libfreetype.6.dylib", out handle);
-			if (success) return handle;
+			// .NET's internal list of directory paths to search for native libraries.
+			// This typically includes the .NET runtime directory and the application's `runtimes/{rid}/native` folder.
+			//
+			// https://learn.microsoft.com/en-us/dotnet/core/dependency-loading/default-probing#host-configured-probing-properties
+			string[] loadPaths = (AppContext.GetData("NATIVE_DLL_SEARCH_DIRECTORIES")?.ToString() ?? "")
+				.Split(Path.PathSeparator, StringSplitOptions.RemoveEmptyEntries)
+				.Reverse() // Try to prioritize system entries first before Resonite's bundled dlls
+				.ToArray();
 
+			foreach (string candidate in BinaryCandidates)
+			{
+				foreach (string path in loadPaths)
+				{
+					bool success = NativeLibrary.TryLoad(Path.Combine(path, candidate), out IntPtr handle);
+					if (success) return handle;
+				}
+			}
+
+			// We can't find the library. GG.
 			return IntPtr.Zero;
 		}
 
